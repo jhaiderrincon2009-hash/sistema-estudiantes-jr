@@ -317,8 +317,6 @@ $("btnSalir").addEventListener("click", () => {
 
 // Mostrar los registros existentes al cargar el programa
 renderizarLista();
-```javascript
-// EXPORTAR ESTUDIANTES A EXCEL
 
 $("exportarExcel").addEventListener("click", () => {
 
@@ -360,4 +358,32 @@ $("exportarExcel").addEventListener("click", () => {
 
     mostrarMensaje("Archivo Excel generado correctamente.");
 });
-```
+// AVANZAR ENTRE LOS CAMPOS AL PRESIONAR ENTER
+
+const ordenCampos = [
+    "cedula",
+    "nombre1",
+    "nombre2",
+    "apellido1",
+    "apellido2",
+    "telefono",
+    "direccion"
+];
+
+ordenCampos.forEach((id, indice) => {
+    $(id).addEventListener("keydown", (evento) => {
+
+        if (evento.key === "Enter") {
+            evento.preventDefault();
+
+            const siguienteIndice = indice + 1;
+
+            if (siguienteIndice < ordenCampos.length) {
+                $(ordenCampos[siguienteIndice]).focus();
+            } else {
+                $("btnGuardar").focus();
+            }
+        }
+
+    });
+});

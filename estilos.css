@@ -64,6 +64,7 @@ body {
     gap: 15px;
     flex-wrap: wrap;
     margin-bottom: 25px;
+    padding-top: 65px;
 }
 
 .encabezado h1 {
@@ -237,4 +238,50 @@ tbody tr:hover {
     .encabezado {
         align-items: stretch;
     }
+}
+/* LOGO JR */
+.logo-jr {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #123c69, #2878a5);
+    color: white;
+
+    font-size: 26px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #0002;
+
+    letter-spacing: 1px;
+}
+/* FIRMA DEL DESARROLLADOR */
+.firma-programador {
+    margin-top: 25px;
+    padding-top: 15px;
+
+    border-top: 1px solid #e2e8f0;
+
+    text-align: center;
+
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.firma-programador strong {
+    display: block;
+
+    color: #123c69;
+    font-size: 15px;
+    font-weight: bold;
 }
