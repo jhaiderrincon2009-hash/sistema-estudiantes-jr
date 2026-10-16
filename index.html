@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estudiantes</title>
+    <link rel="stylesheet" href="estilos.css">
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Pantalla de acceso -->
+    <section id="pantallaAcceso" class="login">
+        <div class="login-card">
+            <h1>Acceso al sistema</h1>
+            <p>Ingrese su código de seguridad</p>
+
+            <form id="formAcceso">
+                <input
+                    type="password"
+                    id="codigoAcceso"
+                    placeholder="Código de acceso"
+                    required
+                >
+                <button type="submit">Ingresar</button>
+                <p id="mensajeAcceso" class="mensaje"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sistema principal -->
+<main id="sistema" class="contenedor oculto">
+
+    <!-- LOGO JR -->
+    <div class="logo-jr">
+        JR
+    </div>
+
+    <header class="encabezado">
+            <div>
+                <h1>Registro de estudiantes</h1>
+                <p>Sistema de administración académica</p>
+            </div>
+            <button id="btnSalir" class="btn-secundario">
+                Cerrar sesión
+            </button>
+        </header>
+
+        <section class="panel">
+            <h2>Datos del estudiante</h2>
+
+            <form id="formEstudiante">
+                <div class="form-grid">
+
+                    <div class="campo">
+                        <label for="cedula">Cédula *</label>
+                        <input type="text" id="cedula"
+                               placeholder="Número de cédula" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="nombre1">Primer nombre *</label>
+                        <input type="text" id="nombre1"
+                               placeholder="Primer nombre" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="nombre2">Segundo nombre</label>
+                        <input type="text" id="nombre2"
+                               placeholder="Segundo nombre">
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellido1">Primer apellido *</label>
+                        <input type="text" id="apellido1"
+                               placeholder="Primer apellido" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellido2">Segundo apellido</label>
+                        <input type="text" id="apellido2"
+                               placeholder="Segundo apellido">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono"
+                               placeholder="Número de teléfono" required>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="direccion">Dirección *</label>
+                        <input type="text" id="direccion"
+                               placeholder="Dirección de residencia" required>
+                    </div>
+
+                </div>
+
+                <div class="botones">
+                    <button type="button" id="btnGuardar">
+                        Guardar
+                    </button>
+                    <button type="button" id="btnConsultar"
+                            class="btn-azul">
+                        Consultar
+                    </button>
+                    <button type="button" id="btnEditar"
+                            class="btn-naranja">
+                        Editar
+                    </button>
+                    <button type="button" id="btnEliminar"
+                            class="btn-rojo">
+                        Eliminar
+                    </button>
+                    <button type="button" id="btnListar"
+                            class="btn-verde">
+                        Lista de estudiantes
+                    </button>
+                    <button type="reset" class="btn-secundario">
+                        Limpiar
+                    </button>
+                    <button type="button" id="exportarExcel" class="btn-verde">
+    Descargar Excel
+</button>
+                </div>
+            </form>
+
+            <p id="mensaje" class="mensaje"></p>
+            <!-- FIRMA DEL DESARROLLADOR -->
+<footer class="firma-programador">
+    Programa hecho por el ingeniero
+    <strong>Jhaider Andres Rincon Rincon</strong>
+</footer>
+        </section>
+
+        <!-- Tabla de estudiantes -->
+        <section id="seccionLista" class="panel oculto">
+            <h2>Lista de estudiantes</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Nombre completo</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaEstudiantes"></tbody>
+                </table>
+            </div>
+
+            <p id="totalEstudiantes"></p>
+        </section>
+    </main>
+
+</body>
+</html>
